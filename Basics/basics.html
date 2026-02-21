@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minimal Basics Assignment</title>
+  <link rel="stylesheet" href="basics.css">
+</head>
+<body>
+  <h1 id="top">Heading</h1>
+
+  <p>Paragraph <i>italic</i> <b>bold</b> <span>span</span></p>
+
+
+  <a href="#section2">Go to Section 2</a>
+  <ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+  </ul>
+
+
+  <label>Label</label>
+
+  <blockquote>Blockquote</blockquote>
+
+
+  <hr>
+  <img src="https://via.placeholder.com/100" alt="img">
+  <div class="page-border">Division with borders</div>
+  <div class="sizing-px">100px x 50px</div>
+  <div class="sizing-percent">50% x 30%</div>
+  <div class="font-demo">Font demo</div>
+
+
+  <h2 id="section2">Section 2</h2>
+  <a href="#top">Back to Top</a>
+
+  
+
+  <button onclick="sortFruits()">Sort Fruits Descending</button>
+  <ul id="fruits"></ul>
+
+  <script>
+    // Single line comment
+    /* Multi-line
+       comment */
+    var fruits = ["Apple", "Banana", "Cherry", "Date"];
+    document.getElementById("fruits").innerHTML = fruits.join("<li></li>");
+    function sortFruits() {
+      fruits.sort();
+      document.getElementById("fruits").innerHTML = fruits.join("<li></li>");
+    }
+
+    var obj = {a:1, b:2};
+    for (var key in obj) console.log(key, obj[key]);
+
+    
+    var person = {firstname: "kartikey", lastname: "kartikey"};
+    
+    console.log(person.firstname);
+    console.log(person["lastname"]);
+
+    
+    x = 5;
+    var x;
+    console.log(x);
+
+    
+    "use strict";
+    // y = 10; // Uncommenting this will cause error: y is not defined
+  </script>
+</body>
+</html>
