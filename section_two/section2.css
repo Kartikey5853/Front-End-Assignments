@@ -1,0 +1,28 @@
+
+
+/* Table border and hover */
+table { border: 2px solid black; transition: border-color 0.3s; }
+table:hover { border-color: red; }
+
+/* Visibility and display */
+.hidden { visibility: hidden; }
+.collapse { visibility: collapse; }
+.none { display: none; }
+.inline { display: inline; }
+.block { display: block; }
+.contents { display: contents; }
+.list-item { display: list-item; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Padding and margin demo */
+.pad { padding: 20px; background: #eee; }
+.mar { margin: 20px; background: #ddd; }
+
+/* Multiple backgrounds */
+.multi-bg {
+  background-image: url('https://via.placeholder.com/50x50'), url('https://via.placeholder.com/100x100');
+  background-size: 50px 50px, 100px 100px;
+  height: 120px;
+}

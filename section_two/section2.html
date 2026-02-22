@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Section Two Minimal Demo</title>
+  <style>
+    /* Table border and hover */
+    table { border: 2px solid black; transition: border-color 0.3s; }
+    table:hover { border-color: red; }
+    /* Visibility and display */
+    .hidden { visibility: hidden; }
+    .collapse { visibility: collapse; }
+    .none { display: none; }
+    .inline { display: inline; }
+    .block { display: block; }
+    .contents { display: contents; }
+    .list-item { display: list-item; }
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+    /* Padding and margin demo */
+    .pad { padding: 20px; background: #eee; }
+    .mar { margin: 20px; background: #ddd; }
+    /* Multiple backgrounds */
+    .multi-bg {
+      background-image: url('https://via.placeholder.com/50x50'), url('https://via.placeholder.com/100x100');
+      background-size: 50px 50px, 100px 100px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="top">Section Two</h1>
+
+  
+  <form>
+    <input type="text" placeholder="Text"><br>
+    <input type="password" placeholder="Password"><br>
+    <input type="submit">
+    <input type="reset"><br>
+
+
+    <input type="radio" name="r">Radio
+    <input type="checkbox">Checkbox
+    <button type="button">Button</button>
+    <br>
+    
+
+    <input type="number" min="1" max="10" value="5"><br>
+
+    <input type="range" min="0" max="100"><br>
+    <input type="color"><br>
+    <input type="date"><br>
+    <input type="file"><br>
+    <input type="time"><br>
+    <input type="month"><br>
+    <input type="week"><br>
+    <input type="email" required><br>
+
+
+    
+    <input type="text" disabled value="disabled"><br>
+    <input type="text" maxlength="5" value="maxlen"><br>
+    <input type="number" min="2" max="8" value="3"><br>
+    <input type="text" readonly value="readonly"><br>
+    <input type="text" required placeholder="required"><br>
+    <input type="text" size="10" value="size"><br>
+    <input type="text" value="value"><br>
+  </form>
+
+ 
+  <a href="https://www.example.com" target="_blank">Open Example.com</a>
+
+ 
+  <iframe src="https://www.example.com" width="100" height="50"></iframe>
+  <marquee>Marquee Text</marquee>
+
+  <table>
+    <tr><td>Cell 1</td><td>Cell 2</td></tr>
+  </table>
+
+  <div class="hidden">Hidden</div>
+  <div class="collapse">Collapse</div>
+  <div class="none">None</div>
+  <span class="inline">Inline</span>
+  <div class="block">Block</div>
+  <div class="contents"><span>Contents</span></div>
+  <li class="list-item">List Item</li>
+
+  <!-- Long page with smooth scroll -->
+  <a href="#bottom">Click to go to bottom of page</a>
+  <div style="height:600px;"></div>
+  <a id="bottom"></a>
+  <a href="#top">Click to go to top of page</a>
+
+  <!-- Padding and margin -->
+  <div class="pad">Padding 20px</div>
+  <div class="mar">Margin 20px</div>
+
+  <!-- Multiple backgrounds -->
+  <div class="multi-bg">Multiple Backgrounds</div>
+
+  <!-- JS tasks -->
+  <button onclick="this.style.display='none'">Disappear (this)</button>
+  <button onclick="showCallApply()">Call/Apply</button>
+  <button onclick="count()">Count</button>
+  <span id="counter">0</span>
+  <button onclick="counterObj.value++;
+document.getElementById('getter').textContent=counterObj.value">Count (getter/setter)</button>
+  <span id="getter">0</span>
+  <script>
+    // call/apply demo
+    function showCallApply() {
+      function greet(msg) { alert(msg + ' ' + this.name); }
+      var user = {name:'A'};
+      greet.call(user, 'Hi');
+      greet.apply(user, ['Hello']);
+    }
+    // Counter
+    var c = 0;
+    function count() {
+      document.getElementById('counter').textContent = ++c;
+    }
+    // Counter with getter/setter
+    var counterObj = {
+      _v: 0,
+      get value() { return this._v; },
+      set value(val) { this._v = val; }
+    };
+    // Prototype
+    function Animal(){}
+    Animal.prototype.type = 'mammal';
+    var a = new Animal();
+    // a.type is 'mammal'
+  </script>
+</body>
+</html>
