@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+table caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+table th, table td {
+    border: 1px solid #888;
+    padding: 8px;
+    text-align: left;
+}
+.fixed-layout {
+    table-layout: fixed;
+}
+.auto-layout {
+    table-layout: auto;
+}
+.circle-list {
+    list-style-type: circle;
+}
+.square-list {
+    list-style-type: square;
+}
+.decimal-list {
+    list-style-type: decimal;
+}
+.grid-container {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.grid-type1 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-type2 {
+    grid-template-rows: repeat(2, 60px);
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-item {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.hero-image {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-text {
+    color: #fff;
+    font-size: 2.5em;
+    background: rgba(0,0,0,0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.responsive-item {
+    background: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+.responsive-img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 10px auto;
+}
+.responsive-video {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 10px auto;
+}
+@media (max-width: 700px) {
+    .responsive-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-text {
+        font-size: 1.5em;
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 500px) {
+    .responsive-img, .responsive-video {
+        max-width: 100%;
+    }
+    .grid-item, .responsive-item {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
