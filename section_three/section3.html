@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Section Three Assignment</title>
+    <link rel="stylesheet" href="section3.css">
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Section Three Assignment</h1>
+            <h2>HTML5, CSS, JavaScript</h2>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#non-semantic">Non-Semantic Elements</a></li>
+                <li><a href="#semantic">Semantic Elements</a></li>
+                <li><a href="#html5">HTML5 Tags</a></li>
+                <li><a href="#css">CSS Effects</a></li>
+                <li><a href="#js">JavaScript Events</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="non-semantic">
+        <h2>Non-Semantic Elements</h2>
+        <div class="box">This is a div element</div>
+        <span class="highlight">This is a span element</span>
+    </section>
+
+
+    <section id="semantic">
+        <h2>Semantic Elements</h2>
+        <form id="sampleForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <button type="submit">Submit</button>
+        </form>
+
+        <table border="1">
+            <tr><th>Header 1</th><th>Header 2</th></tr>
+            <tr><td>Cell 1</td><td>Cell 2</td></tr>
+        </table>
+
+        <article>
+            <h3>Sample Article</h3>
+            <p>This is an article element.</p>
+        </article>
+    </section>
+
+    <section id="html5">
+        <h2>HTML5 Tags</h2>
+        <article>
+            <header>
+                <hgroup>
+                    <h1>HTML5 Article</h1>
+                    <h2>With All Tags</h2>
+                </hgroup>
+            </header>
+            <figure>
+                <img src="https://via.placeholder.com/150" alt="Sample Image" id="shadowImg">
+                <figcaption>Sample image with shadow</figcaption>
+            </figure>
+            <aside>
+                <mark>This is aside content with mark tag.</mark>
+            </aside>
+            <section>
+                <time datetime="2026-02-21">February 21, 2026</time>
+            </section>
+            <footer>
+                <p>Footer content here.</p>
+            </footer>
+        </article>
+    </section>
+
+
+    <section id="css">
+        <h2>CSS Effects</h2>
+        <div class="shadow-box">Image Box with Shadow</div>
+        <div class="animation-box">CSS Animation</div>
+        <div class="pagination">
+            <span class="page">1</span>
+            <span class="page">2</span>
+            <span class="page">3</span>
+        </div>
+
+
+        <div class="pagination spaced">
+            <span class="page">1</span>
+            <span class="page">2</span>
+            <span class="page">3</span>
+        </div>
+
+
+        <div class="position-static">Static</div>
+        <div class="position-relative">Relative</div>
+        <div class="position-fixed">Fixed</div>
+        <div class="position-absolute">Absolute</div>
+        <div class="position-sticky">Sticky</div>
+        <div class="overflow-scroll">
+            <div class="scroll-content">Scroll me! Scroll me! Scroll me! Scroll me! Scroll me! Scroll me! Scroll me! Scroll me!</div>
+        </div>
+
+
+
+        <img src="https://via.placeholder.com/100" class="opacity-img" alt="Opacity Image">
+    </section>
+
+    <section id="js">
+
+
+        <h2>JavaScript Events</h2>
+        <button id="showDateBtn">Show Date & Time</button>
+        <div id="dateTime"></div>
+        <form id="validateForm">
+
+
+            <input type="text" id="validateInput" placeholder="Enter something">
+            <button type="submit">Validate</button>
+        </form>
+
+
+        <div id="validationMsg"></div>
+        <button id="cookieBtn">Check Cookie</button>
+        <div id="cookieMsg"></div>
+        <script>
+           
+
+
+            document.getElementById('showDateBtn').addEventListener('click', function() {
+                const now = new Date();
+                document.getElementById('dateTime').textContent = now;
+                console.log('Button clicked, date/time shown');
+            });
+
+            document.getElementById('validateForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const val = document.getElementById('validateInput').value;
+                if (!val) {
+                    document.getElementById('validationMsg').textContent = 'Input cannot be empty!';
+                } else {
+                    document.getElementById('validationMsg').textContent = 'Valid input.';
+                }
+                console.log('Validation checked:', val);
+            });
+
+
+
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                let expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+            function checkCookie() {
+                let user = getCookie("username");
+                if (user != "") {
+                    document.getElementById('cookieMsg').textContent = "Welcome again " + user;
+                } else {
+                    user = prompt("Please enter your name:", "");
+                    if (user != "" && user != null) {
+                        setCookie("username", user, 30);
+                        document.getElementById('cookieMsg').textContent = "Cookie set for " + user;
+                    }
+                }
+                console.log('Cookie checked:', user);
+            }
+            document.getElementById('cookieBtn').addEventListener('click', checkCookie);
+
+
+            
+            const person = {
+                name: "John",
+                age: 30,
+                city: "New York"
+            };
+            console.log(person.name, person.age, person.city);
+        </script>
+    </section>
+    <footer>
+        <p>Section Three Assignment Footer</p>
+    </footer>
+</body>
+</html>

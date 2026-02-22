@@ -85,51 +85,52 @@
   <div class="contents"><span>Contents</span></div>
   <li class="list-item">List Item</li>
 
-  <!-- Long page with smooth scroll -->
+
   <a href="#bottom">Click to go to bottom of page</a>
   <div style="height:600px;"></div>
   <a id="bottom"></a>
   <a href="#top">Click to go to top of page</a>
 
-  <!-- Padding and margin -->
+
   <div class="pad">Padding 20px</div>
   <div class="mar">Margin 20px</div>
 
-  <!-- Multiple backgrounds -->
   <div class="multi-bg">Multiple Backgrounds</div>
 
-  <!-- JS tasks -->
+
   <button onclick="this.style.display='none'">Disappear (this)</button>
   <button onclick="showCallApply()">Call/Apply</button>
   <button onclick="count()">Count</button>
   <span id="counter">0</span>
+
   <button onclick="counterObj.value++;
 document.getElementById('getter').textContent=counterObj.value">Count (getter/setter)</button>
   <span id="getter">0</span>
+
   <script>
-    // call/apply demo
+ 
     function showCallApply() {
       function greet(msg) { alert(msg + ' ' + this.name); }
       var user = {name:'A'};
       greet.call(user, 'Hi');
       greet.apply(user, ['Hello']);
     }
-    // Counter
+
     var c = 0;
     function count() {
       document.getElementById('counter').textContent = ++c;
     }
-    // Counter with getter/setter
+
     var counterObj = {
       _v: 0,
       get value() { return this._v; },
       set value(val) { this._v = val; }
     };
-    // Prototype
+    
     function Animal(){}
     Animal.prototype.type = 'mammal';
     var a = new Animal();
-    // a.type is 'mammal'
+   
   </script>
 </body>
 </html>

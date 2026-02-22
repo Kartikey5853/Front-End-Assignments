@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+nav ul li a:hover {
+    background: #555;
+}
+.box {
+    background: #eee;
+    padding: 10px;
+    margin: 10px 0;
+}
+.highlight {
+    background: yellow;
+    padding: 2px 6px;
+}
+.shadow-box {
+    width: 200px;
+    height: 100px;
+    background: #fafafa;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s;
+}
+.shadow-box:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+#shadowImg {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    transition: box-shadow 0.3s;
+}
+#shadowImg:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+.animation-box {
+    width: 150px;
+    height: 50px;
+    background: #4caf50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+.pagination {
+    display: flex;
+    gap: 0;
+}
+.pagination .page {
+    padding: 8px 16px;
+    background: #eee;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.pagination .page:hover {
+    background: #2196f3;
+    color: #fff;
+}
+.pagination.spaced {
+    gap: 10px;
+}
+.position-static {
+    position: static;
+    background: #f0f0f0;
+    margin: 10px 0;
+    padding: 10px;
+}
+.position-relative {
+    position: relative;
+    left: 20px;
+    background: #e0e0e0;
+    margin: 10px 0;
+    padding: 10px;
+}
+.position-fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #d0d0d0;
+    padding: 10px;
+    z-index: 100;
+}
+.position-absolute {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    background: #c0c0c0;
+    padding: 10px;
+}
+.position-sticky {
+    position: sticky;
+    top: 0;
+    background: #b0b0b0;
+    padding: 10px;
+}
+.overflow-scroll {
+    width: 250px;
+    height: 60px;
+    border: 1px solid #ccc;
+    overflow: scroll;
+    margin: 20px 0;
+}
+.scroll-content {
+    width: 600px;
+    height: 40px;
+    background: #eee;
+}
+.opacity-img {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+.opacity-img:hover {
+    opacity: 1;
+}
